@@ -3,6 +3,7 @@
 
 int main() {
     char name[30];
+    printf("Enter the Name of the user : ");
     scanf("%s",&name);
     int units;
     float ruppes=0;
@@ -24,7 +25,7 @@ int main() {
         //printf("%.2f",ruppes);
     }
 
-    printf("Total charges consumed = %.2f",100+ruppes);
+    printf("%s has to pay for electricity = %.2f",name,100+ruppes);
 
     return 0;
 }

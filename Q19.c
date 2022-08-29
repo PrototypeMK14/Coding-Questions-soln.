@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
-int sum(int *ptr, int N)
+float sum(float *ptr, int N)
 {
-    int sum = 0;
+    float sum = 0;
     for (int i = 0; i < N; i++)
     {
         sum += *(ptr + i);
@@ -12,9 +13,9 @@ int sum(int *ptr, int N)
     return sum;
 }
 
-int mean(int *ptr, int N)
+float mean(float *ptr, int N)
 {
-    int sum = 0;
+    float sum = 0;
     for (int i = 0; i < N; i++)
     {
         sum += *(ptr + i);
@@ -23,23 +24,25 @@ int mean(int *ptr, int N)
     return (sum / N);
 }
 
-int sd(int *ptr, int N)
+float sd(float *ptr, int N)
 {
-    int sum = 0, mean;
+    float sum = 0, sd, mean;
     for (int i = 0; i < N; i++)
     {
         sum += *(ptr + i);
     }
 
     mean = sum / N;
-    sum = 0;
 
+    sum = 0;
     for (int i = 0; i < N; i++)
     {
-        sum += (*(ptr + i) - (mean));
+        sum += pow((*(ptr + i) - mean), 2);
     }
 
-    return (sum/N);
+    sd = sqrt(sum / N);
+
+    return sd;
 }
 
 int main()
@@ -47,18 +50,19 @@ int main()
     int N;
     printf("Enter the no. of real nos. you want :");
     scanf("%d", &N);
-    int array[N];
+    float array[N];
 
     printf("Enter the elements of the array : ");
     for (int i = 0; i < N; i++)
     {
-        scanf("%d", &array[i]);
+        scanf("%f", &array[i]);
     }
 
-    int *ptr = array;
+    float *ptr = array;
 
-    printf("Sum of the array elements is = %d\n", sum(ptr, N));
-    printf("Mean of the array is = %d\n", mean(ptr, N));
-    printf("Std. deviation of the array is = %d\n", sd(ptr, N));
+    printf("Sum of the array elements is = %.2f\n", sum(ptr, N));
+    printf("Mean of the array is = %.2f\n", mean(ptr, N));
+    printf("Std. deviation of the array is = %.3f\n", sd(ptr, N));
+
     return 0;
 }
