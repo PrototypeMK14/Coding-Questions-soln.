@@ -15,6 +15,7 @@ int main()
     printf("Enter the 2nd string : ");
     gets(s2);
 
+    printf("\n");
     sl(s1, s2, &count1, &count2);
     compare(s1, s2, count1, count2, a);
     concat(s1, s2, count1, count2);
@@ -88,6 +89,7 @@ void concat(char s1[30], char s2[30], int count1, int count2)
     }
 
     int i = 0;
+    printf("Concatinated string :- ");
     while (1 > 0)
     {
         printf("%c", s3[i]);
