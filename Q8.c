@@ -7,6 +7,6 @@ int main()
     int n;
     printf("Enter a number : ");
     scanf("%d", &n);
-    printf("Square root of %d is = %.2f", n, sqrt(n));
+    printf("Square root of %d is = %.3f", n, sqrt(n));
     return 0;
 }
