@@ -5,6 +5,7 @@ int main() {
     int a=0,b=1,c,n;
     printf("Enter the term till you want Fibonacci series of : ");
     scanf("%d",&n);
+    printf("Fibonacci Series :-\n");
     printf("%d %d ",a,b);
     for(int i=3;i<=n;i++) {
         c=a+b;
