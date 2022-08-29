@@ -4,7 +4,7 @@
 int main() {
     char name[30];
     printf("Enter the Name of the user : ");
-    scanf("%s",&name);
+    gets(name);
     int units;
     float ruppes=0;
     printf("Enter the no. of units of electricity used : ");
